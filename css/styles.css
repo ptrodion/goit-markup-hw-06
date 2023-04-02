@@ -129,6 +129,23 @@ body {
   overflow: hidden;
 }
 
+.button {
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  outline: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: inherit;
+  background-color: #4d5ae5;
+  transition: background-color var(--main-transition);
+}
+
 /**-----------HEADER-------------*/
 .header {
   padding-top: 24px;
@@ -222,22 +239,8 @@ body {
   letter-spacing: 0.02em;
 }
 .hero-button {
-  display: block;
   min-width: 169px;
   height: 56px;
-  margin: 0 auto;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  border: 1px solid transparent;
-
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: inherit;
-  background-color: #4d5ae5;
-  transition: background-color var(--main-transition);
 }
 
 .hero-button:is(:hover, :focus) {
@@ -521,6 +524,7 @@ body {
   background-color: #4d5ae5;
   border-radius: 4px;
   border: 1px solid transparent;
+  outline: 0;
 
   transition: background-color var(--main-transition);
 }
@@ -740,6 +744,7 @@ body {
 .modal-icon {
   width: 18px;
   height: 24px;
+  background-color: transparent;
   position: absolute;
   left: 16px;
   top: 50%;
@@ -769,6 +774,7 @@ body {
   resize: none;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
+  background-color: transparent;
   outline: transparent;
   transition: border-color var(--main-transition);
   color: var(--text-primary-color);
@@ -776,9 +782,113 @@ body {
   line-height: 1.5;
   font-size: 12px;
   letter-spacing: 0.02em;
-  padding-left: 16px;
+  padding: 8px 16px;
 }
 
 .modal-textarea:focus {
   border-color: #4d5ae5;
+}
+
+.modal-link {
+  text-decoration: underline;
+}
+
+.modal-field-check {
+  margin-top: 17px;
+  margin-bottom: 24px;
+}
+
+/*! FIRST METHOD FOR checkbox */
+
+/* .check-text {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+.check-text::before {
+  content: ' ';
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+}
+
+.privasy:checked + .check-text::before {
+  background-color: #404bbf;
+  border: 1px solid #404bbf;
+  border-radius: 2px;
+  background-image: url(../images/modal-form/modal-check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+/*! SECOND METHOD FOR checkbox */
+
+.modal-icon-check {
+  width: 10px;
+  height: 8px;
+}
+
+.check-text {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
+.check-text span {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+  transition: background-colo var(--main-transition),
+    border-color var(--main-transition), fill var(--main-transition);
+}
+.modal-submit-button {
+  display: block;
+  width: 169px;
+  height: 56px;
+  margin: 0 auto;
+}
+
+.privasy:checked + .check-text span {
+  background-color: #404bbf;
+  border-color: #404bbf;
+  fill: #f4f4fd;
+}
+
+.privasy:focus + .check-text span {
+  border-color: #404bbf;
+}
+
+/*! FINISH  */
+
+.modal-submit-button {
+  min-width: 169px;
+  height: 56px;
+}
+
+.modal-submit-button:is(:hover, :focus) {
+  background-color: #404bbf;
+  /* border: none; */
+  /* border-color: transparent; */
+}
+
+.modal-submit-button span {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
 }
