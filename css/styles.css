@@ -186,6 +186,10 @@ body {
   color: var(--text-accent-color);
 }
 
+.header-current-page {
+  color: var(--text-accent-color);
+}
+
 .header-current-page::after {
   content: '';
   display: block;
